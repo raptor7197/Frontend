@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Glow </title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class = "container">
+        <DIV CLASS = "card" style = "--clr:rgb(245, 11, 11);"></DIV>
+        <DIV CLASS = "card" style = "--clr:rgb(2, 48, 255);"></DIV>
+    </div>
+    <div class="container">
+        <DIV CLASS = "card1" style = "--clr:rgb(11, 245, 194);"></DIV>
+        <DIV CLASS = "card1" style = "--clr:rgb(196, 2, 255);"></DIV>
+    </div>
+
+<script>
+    let cards = document.querySelectorAll('.card');
+    cards.forEach(card => {
+        card.onmousemove = function(e) {
+            let x = e.pageX - card.offsetLeft;
+            let y = e.pageY - card.offsetTop;
+            const rect = card.getBoundingClientRect();
+
+
+            card.style.setProperty('--x', e.clientX - rect.left + 'px');
+            card.style.setProperty('--y', e.clientY - rect.top + 'px');
+        }
+    })
+    let cards1 = document.querySelectorAll('.card1');
+    cards1.forEach(card => {
+        card.onmousemove = function(e) {
+            let x = e.pageX - card.offsetLeft;
+            let y = e.pageY - card.offsetTop;
+            const rect = card.getBoundingClientRect();
+
+
+            card.style.setProperty('--x', e.clientX - rect.left + 'px');
+            card.style.setProperty('--y', e.clientY - rect.top + 'px');
+        }
+    })
+</script>
+
+
+</body>
+</html>
